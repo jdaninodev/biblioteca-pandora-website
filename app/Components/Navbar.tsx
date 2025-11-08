@@ -179,10 +179,11 @@ export default function Navbar() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => router.push('/resultados')}
               className="bg-white text-gray-800 flex items-center gap-2"
             >
               <Trophy className="w-5 h-5 text-orangeAccent" />
-              <span>Premios</span>
+              <span>Tabla de posiciones</span>
             </motion.button>
           </div>
         </div>
