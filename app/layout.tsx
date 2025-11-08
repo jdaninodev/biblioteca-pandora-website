@@ -25,7 +25,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      {/*
+        Some browser extensions inject attributes into the <body> (for example
+        `cz-shortcut-listen="true"`). If that happens only on the client it
+        causes React hydration mismatch warnings in development. To reduce false
+        positives during development we add the same attribute server-side as a
+        harmless no-op. If you prefer, remove this attribute and disable the
+        responsible extension in your browser (recommended for development).
+      */}
       <body
+        cz-shortcut-listen="true"
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-50 dark:bg-black`}
       >
         <Navbar />
