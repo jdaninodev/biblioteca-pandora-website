@@ -42,11 +42,11 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen pt-32 px-6 bg-gradient-to-br from-blue-50 via-white to-orange-50 flex items-center justify-center">
+  <div className="min-h-screen pt-4 px-6 bg-gradient-to-br from-blue-50 via-white to-orange-50 flex items-center justify-center">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="w-full max-w-md"
+        className="w-full max-w-md transform -translate-y-8 md:-translate-y-12"
       >
         <div className="bg-white rounded-2xl shadow-medium p-8 border-2 border-blueDeep/20">
           {/* Header */}
