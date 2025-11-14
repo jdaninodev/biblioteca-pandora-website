@@ -10,6 +10,7 @@ import {
   ActionButton,
   LoadingState,
 } from "./components";
+import { ArrowLeft } from "lucide-react";
 
 type User = {
   id: string;
@@ -161,6 +162,14 @@ export default function RetoPage() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-blue-50 via-white to-orange-50 px-3 md:px-6 lg:px-8 pt-12 pb-4 overflow-hidden">
+      <button
+        onClick={() => router.push("/dashboard")}
+        className="fixed left-4 top-20 md:top-32 z-50 inline-flex items-center gap-2 bg-white/95 text-gray-800 px-3 py-2 rounded-lg shadow-sm hover:shadow-md transition"
+      >
+        <ArrowLeft className="w-4 h-4" />
+        Volver
+      </button>
+
       <TimerBadge seconds={seconds} />
       
       <ChallengeTypeBadge type={challenge.type} />
