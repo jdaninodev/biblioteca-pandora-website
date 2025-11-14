@@ -6,12 +6,12 @@ const prisma = new PrismaClient();
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { userId, type, timeInSeconds, isCorrect, points } = body;
+    const { userId, type, question, timeInSeconds, isCorrect, points } = body;
 
     // Validar datos requeridos
-    if (!userId || !type || timeInSeconds === undefined || isCorrect === undefined) {
+    if (!userId || !type || !question || timeInSeconds === undefined || isCorrect === undefined) {
       return NextResponse.json(
-        { error: 'Faltan datos requeridos', received: { userId, type, timeInSeconds, isCorrect } },
+        { error: 'Faltan datos requeridos', received: { userId, type, question, timeInSeconds, isCorrect } },
         { status: 400 }
       );
     }
@@ -51,6 +51,7 @@ export async function POST(request: NextRequest) {
       data: {
         userId,
         type,
+        question,
         timeInSeconds,
         isCorrect,
         points: calculatedPoints || 0,
