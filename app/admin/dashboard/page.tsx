@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { verifyAdmin } from "../../../lib/adminAuth";
 import { prisma } from "../../../lib/prisma";
 import StudentManager from "./StudentManager";
+import LogoutButton from "./LogoutButton";
 
 export default async function AdminDashboard() {
   const cookieStore = await cookies();
@@ -44,14 +45,7 @@ export default async function AdminDashboard() {
             <h1 className="text-3xl md:text-4xl font-black text-gray-800">Panel de Administración</h1>
             <p className="text-gray-600 mt-1">Gestiona estudiantes y visualiza estadísticas</p>
           </div>
-          <form action="/api/admin/logout" method="post">
-            <button 
-              type="submit" 
-              className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg font-bold shadow-md hover:shadow-lg transition-all"
-            >
-              Cerrar sesión
-            </button>
-          </form>
+          <LogoutButton />
         </div>
 
         {/* Estadísticas */}

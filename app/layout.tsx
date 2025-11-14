@@ -18,7 +18,7 @@ export const metadata = {
     siteName: 'Biblioteca Pandora',
     images: [
       {
-        url: '/og-image.png',
+        url: '/og-image.png?v=2',
         width: 1200,
         height: 630,
         alt: 'Biblioteca Pandora - Retos diarios',
@@ -31,7 +31,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Biblioteca Pandora',
     description: 'Retos diarios para pequeños exploradores',
-    images: ['/og-image.png'],
+    images: ['/og-image.png?v=2'],
   },
   icons: {
     icon: [
